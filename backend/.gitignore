@@ -1,0 +1,72 @@
+# ============================================
+# Environment Variables — NEVER commit these
+# ============================================
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+*.env
+
+# ============================================
+# Node.js
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm
+
+# ============================================
+# Build Output
+# ============================================
+dist/
+build/
+.next/
+out/
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================
+# IDE / Editor
+# ============================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ============================================
+# Logs
+# ============================================
+logs/
+*.log
+
+# ============================================
+# Coverage & Testing
+# ============================================
+coverage/
+.nyc_output/
+
+# ============================================
+# Security — Private Keys & Certificates
+# ============================================
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+id_rsa
+id_rsa.pub
