@@ -12,11 +12,11 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleLogin(email, password);
+    handleLogin({email, password});
   };
 
   if(loading){
-    return (<main><h1>Loading</h1></main>)
+    return (<main><h1>Loading......</h1></main>)
   }
 
   return (
