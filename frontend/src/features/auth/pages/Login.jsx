@@ -4,15 +4,19 @@ import { useNavigate, Link } from "react-router";
 import { useAuth } from "../hooks/useAuth";
 
 
+
 const Login = () => {
   const { loading, handleLogin } = useAuth();
+
+  const navigate = useNavigate()
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleLogin({email, password});
+    await handleLogin({email, password});
+    navigate("/")
   };
 
   if(loading){
@@ -35,6 +39,7 @@ const Login = () => {
                 type="email"
                 id="email"
                 placeholder="Enter Email"
+                autoComplete="email"
               />
             </div>
 
@@ -47,6 +52,7 @@ const Login = () => {
                 type="password"
                 id="password"
                 placeholder="Enter password"
+                autoComplete="current-password"
               />
             </div>
             <button className="button primary-button">Login</button>
