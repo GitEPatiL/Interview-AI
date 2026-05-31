@@ -1,0 +1,586 @@
+// ─── Google Font ────────────────────────────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+// ─── Design Tokens ──────────────────────────────────────────────────────────
+$font-family:       'Inter', system-ui, -apple-system, sans-serif;
+
+$bg-base:           #050508;
+$bg-surface:        #0c0c14;
+$bg-card:           rgba(255, 255, 255, 0.038);
+$bg-card-hover:     rgba(255, 255, 255, 0.055);
+$bg-input:          rgba(255, 255, 255, 0.04);
+$bg-input-focus:    rgba(255, 255, 255, 0.065);
+
+$border-default:    rgba(255, 255, 255, 0.08);
+$border-focus:      rgba(139, 92, 246, 0.6);
+$border-glow:       rgba(139, 92, 246, 0.3);
+
+$purple-400:        #a78bfa;
+$purple-500:        #8b5cf6;
+$purple-600:        #7c3aed;
+$blue-400:          #60a5fa;
+$cyan-400:          #22d3ee;
+$green-400:         #4ade80;
+
+$text-primary:      #f1f0f5;
+$text-secondary:    rgba(241, 240, 245, 0.55);
+$text-muted:        rgba(241, 240, 245, 0.32);
+
+$radius-sm:         8px;
+$radius-md:         14px;
+$radius-lg:         20px;
+$radius-xl:         28px;
+
+$shadow-card:       0 4px 32px rgba(0, 0, 0, 0.45),
+                    0 1px 0 rgba(255,255,255,0.05) inset;
+$shadow-glow:       0 0 40px rgba(139, 92, 246, 0.18);
+$shadow-cta:        0 8px 32px rgba(139, 92, 246, 0.45),
+                    0 2px 8px rgba(0,0,0,0.4);
+$shadow-cta-hover:  0 14px 48px rgba(139, 92, 246, 0.6),
+                    0 4px 16px rgba(0,0,0,0.5);
+
+$transition-fast:   0.18s ease;
+$transition-med:    0.28s ease;
+$transition-slow:   0.4s ease;
+
+// ─── Scrollbar ──────────────────────────────────────────────────────────────
+::-webkit-scrollbar            { width: 6px; }
+::-webkit-scrollbar-track      { background: transparent; }
+::-webkit-scrollbar-thumb      { background: rgba(139, 92, 246, 0.35); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover{ background: rgba(139, 92, 246, 0.6); }
+
+// ─── Root ────────────────────────────────────────────────────────────────────
+.home {
+  font-family:      $font-family;
+  min-height:       100vh;
+  width:            100%;
+  background-color: $bg-base;
+  position:         relative;
+  overflow-x:       hidden;
+  display:          flex;
+  justify-content:  center;
+  align-items:      flex-start;
+  padding:          60px 24px 80px;
+
+  // ── Background blobs ───────────────────────────────────────────────────
+  .bg-blob {
+    position:       absolute;
+    border-radius:  50%;
+    filter:         blur(100px);
+    pointer-events: none;
+    z-index:        0;
+    animation:      blobFloat 12s ease-in-out infinite alternate;
+    will-change:    transform;
+    transform:      translateZ(0);
+  }
+
+  .bg-blob--1 {
+    width:            600px;
+    height:           600px;
+    background:       radial-gradient(circle, rgba(139,92,246,0.22) 0%, transparent 70%);
+    top:              -160px;
+    left:             -160px;
+    animation-delay:  0s;
+  }
+
+  .bg-blob--2 {
+    width:            500px;
+    height:           500px;
+    background:       radial-gradient(circle, rgba(96,165,250,0.16) 0%, transparent 70%);
+    bottom:           -100px;
+    right:            -100px;
+    animation-delay:  -4s;
+  }
+
+  .bg-blob--3 {
+    width:            400px;
+    height:           400px;
+    background:       radial-gradient(circle, rgba(34,211,238,0.10) 0%, transparent 70%);
+    top:              40%;
+    left:             50%;
+    transform:        translateX(-50%);
+    animation-delay:  -8s;
+  }
+
+  // ── CSS Grid noise overlay ────────────────────────────────────────────
+  .bg-grid {
+    position:         absolute;
+    inset:            0;
+    pointer-events:   none;
+    z-index:          0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size:  48px 48px;
+    mask-image:       radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  // ─── Container ──────────────────────────────────────────────────────────
+  &__container {
+    position:       relative;
+    z-index:        1;
+    width:          100%;
+    max-width:      1180px;
+  }
+
+  // ─── Hero ───────────────────────────────────────────────────────────────
+  &__hero {
+    text-align:     center;
+    margin-bottom:  8px;
+
+    .ant-space {
+      width: 100%;
+    }
+  }
+
+  &__form-row {
+    margin-top: 0 !important;
+  }
+}
+
+// ─── AI Badge ───────────────────────────────────────────────────────────────
+.ai-badge {
+  display:          inline-flex !important;
+  align-items:      center;
+  gap:              6px;
+  background:       rgba(139, 92, 246, 0.12) !important;
+  border:           1px solid rgba(139, 92, 246, 0.3) !important;
+  color:            $purple-400 !important;
+  font-size:        12px !important;
+  font-weight:      600 !important;
+  letter-spacing:   0.06em;
+  padding:          5px 14px !important;
+  border-radius:    99px !important;
+  text-transform:   uppercase;
+  backdrop-filter:  blur(12px);
+
+  .anticon {
+    font-size: 11px;
+  }
+}
+
+// ─── Hero Typography ────────────────────────────────────────────────────────
+.hero__title {
+  font-family:    $font-family !important;
+  font-size:      clamp(36px, 5vw, 62px) !important;
+  font-weight:    800 !important;
+  line-height:    1.1 !important;
+  letter-spacing: -0.03em !important;
+  color:          $text-primary !important;
+  margin:         0 !important;
+
+  &--gradient {
+    background:       linear-gradient(135deg, $purple-400 0%, $blue-400 50%, $cyan-400 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip:  text;
+  }
+}
+
+.hero__subtitle {
+  font-family:    $font-family !important;
+  font-size:      clamp(15px, 1.8vw, 17px) !important;
+  color:          $text-secondary !important;
+  max-width:      580px;
+  margin:         0 auto !important;
+  line-height:    1.7 !important;
+  font-weight:    400 !important;
+}
+
+.hero__divider {
+  border-color:   rgba(255,255,255,0.06) !important;
+  margin:         40px 0 36px !important;
+}
+
+// ─── Glass Card ─────────────────────────────────────────────────────────────
+.glass-card {
+  background:     $bg-card;
+  border:         1px solid $border-default;
+  border-radius:  $radius-lg;
+  padding:        28px;
+  backdrop-filter: blur(24px);
+  box-shadow:     $shadow-card;
+  transition:     border-color $transition-med, box-shadow $transition-med, background $transition-med;
+  position:       relative;
+  overflow:       hidden;
+
+  &::before {
+    content:      '';
+    position:     absolute;
+    inset:        0;
+    border-radius: inherit;
+    background:   linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color:  rgba(139, 92, 246, 0.22);
+    box-shadow:    $shadow-card, $shadow-glow;
+    background:    $bg-card-hover;
+  }
+
+  &--tall {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// ─── Section Header ─────────────────────────────────────────────────────────
+.section-header {
+  display:        flex;
+  align-items:    flex-start;
+  gap:            14px;
+  margin-bottom:  20px;
+}
+
+.section-icon {
+  width:            40px;
+  height:           40px;
+  min-width:        40px;
+  border-radius:    $radius-sm;
+  background:       rgba(139, 92, 246, 0.14);
+  border:           1px solid rgba(139, 92, 246, 0.25);
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  font-size:        17px;
+  color:            $purple-400;
+  transition:       background $transition-fast, transform $transition-fast;
+
+  .glass-card:hover & {
+    background:   rgba(139, 92, 246, 0.22);
+    transform:    scale(1.05);
+  }
+}
+
+.section-label {
+  display:      block;
+  font-family:  $font-family !important;
+  font-size:    14px !important;
+  font-weight:  600 !important;
+  color:        $text-primary !important;
+  line-height:  1.3;
+}
+
+.section-hint {
+  display:      block;
+  font-family:  $font-family !important;
+  font-size:    12px !important;
+  color:        $text-muted !important;
+  margin-top:   2px;
+  font-weight:  400 !important;
+}
+
+// ─── Textarea ────────────────────────────────────────────────────────────────
+.textarea-wrapper {
+  flex:     1;
+  display:  flex;
+  flex-direction: column;
+}
+
+.premium-textarea {
+  font-family:      $font-family;
+  width:            100%;
+  flex:             1;
+  min-height:       220px;
+  background:       $bg-input;
+  border:           1px solid $border-default;
+  border-radius:    $radius-md;
+  color:            $text-primary;
+  font-size:        14px;
+  line-height:      1.7;
+  padding:          16px 18px;
+  resize:           none;
+  outline:          none;
+  transition:       border-color $transition-fast, background $transition-fast, box-shadow $transition-fast;
+  caret-color:      $purple-400;
+
+  &::placeholder {
+    color:          $text-muted;
+    font-size:      13.5px;
+    line-height:    1.6;
+  }
+
+  &:hover {
+    border-color:   rgba(255,255,255,0.14);
+    background:     rgba(255, 255, 255, 0.055);
+  }
+
+  &:focus {
+    border-color:   $border-focus;
+    background:     $bg-input-focus;
+    box-shadow:     0 0 0 3px $border-glow, 0 4px 20px rgba(139, 92, 246, 0.1);
+  }
+
+  // Custom scrollbar inside textarea
+  &::-webkit-scrollbar        { width: 4px; }
+  &::-webkit-scrollbar-track  { background: transparent; }
+  &::-webkit-scrollbar-thumb  { background: rgba(139, 92, 246, 0.3); border-radius: 99px; }
+
+  &--short {
+    min-height: 130px;
+  }
+}
+
+// ─── Char Count ──────────────────────────────────────────────────────────────
+.char-count {
+  margin-top:   8px;
+  text-align:   right;
+
+  &__text {
+    font-family:  $font-family !important;
+    font-size:    11px !important;
+    color:        $text-muted !important;
+  }
+}
+
+// ─── Ant Design Dragger ──────────────────────────────────────────────────────
+.premium-dragger {
+  &.ant-upload-drag {
+    background:       $bg-input !important;
+    border:           2px dashed $border-default !important;
+    border-radius:    $radius-md !important;
+    transition:       border-color $transition-med, background $transition-med, box-shadow $transition-med !important;
+    padding:          0 !important;
+
+    &:hover {
+      border-color:   rgba(139, 92, 246, 0.5) !important;
+      background:     rgba(139, 92, 246, 0.05) !important;
+      box-shadow:     0 0 24px rgba(139, 92, 246, 0.12);
+    }
+
+    .ant-upload-drag-container {
+      padding: 24px 20px;
+    }
+
+    &.ant-upload-drag-hover {
+      border-color:   $purple-500 !important;
+      background:     rgba(139, 92, 246, 0.08) !important;
+    }
+  }
+
+  // Idle state
+  .dragger__idle {
+    display:          flex;
+    flex-direction:   column;
+    align-items:      center;
+    gap:              6px;
+  }
+
+  .dragger__idle-icon {
+    font-size:        36px;
+    color:            $purple-400;
+    margin-bottom:    4px;
+    transition:       transform $transition-med;
+
+    .ant-upload-drag:hover & {
+      transform: translateY(-3px) scale(1.08);
+    }
+  }
+
+  .dragger__idle-text {
+    font-family:  $font-family !important;
+    font-size:    14px !important;
+    font-weight:  600 !important;
+    color:        $text-primary !important;
+  }
+
+  .dragger__idle-hint {
+    font-family:  $font-family !important;
+    font-size:    12px !important;
+    color:        $text-muted !important;
+  }
+
+  // Success state
+  .dragger__success {
+    display:          flex;
+    flex-direction:   column;
+    align-items:      center;
+    gap:              6px;
+  }
+
+  .dragger__success-icon {
+    font-size:    32px;
+    color:        $green-400;
+    margin-bottom: 4px;
+  }
+
+  .dragger__filename {
+    font-family:  $font-family !important;
+    font-size:    13px !important;
+    font-weight:  600 !important;
+    color:        $text-primary !important;
+    word-break:   break-all;
+    max-width:    240px;
+    text-align:   center;
+  }
+
+  .dragger__change {
+    font-family:  $font-family !important;
+    font-size:    11px !important;
+    color:        $text-muted !important;
+  }
+}
+
+// ─── CTA Button ──────────────────────────────────────────────────────────────
+.cta-button {
+  &.ant-btn {
+    font-family:    $font-family !important;
+    height:         56px !important;
+    font-size:      15px !important;
+    font-weight:    700 !important;
+    letter-spacing: 0.01em;
+    border:         none !important;
+    border-radius:  $radius-md !important;
+    background:     linear-gradient(135deg, $purple-600 0%, #6366f1 50%, $blue-400 100%) !important;
+    color:          #ffffff !important;
+    box-shadow:     $shadow-cta !important;
+    transition:     transform $transition-fast, box-shadow $transition-fast, filter $transition-fast !important;
+    position:       relative;
+    overflow:       hidden;
+
+    &::before {
+      content:      '';
+      position:     absolute;
+      inset:        0;
+      background:   linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+      opacity:      0;
+      transition:   opacity $transition-fast;
+    }
+
+    &:hover:not(:disabled) {
+      transform:    translateY(-3px) !important;
+      box-shadow:   $shadow-cta-hover !important;
+      filter:       brightness(1.08);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:active:not(:disabled) {
+      transform:    translateY(0px) !important;
+    }
+
+    &.ant-btn-loading {
+      background:   linear-gradient(135deg, rgba($purple-600, 0.7) 0%, rgba(#6366f1, 0.7) 100%) !important;
+      transform:    none !important;
+    }
+
+    .anticon {
+      font-size: 16px;
+    }
+  }
+}
+
+.cta-disclaimer {
+  display:      block;
+  text-align:   center;
+  font-family:  $font-family !important;
+  font-size:    12px !important;
+  color:        $text-muted !important;
+  margin-top:   -8px !important;
+
+  span {
+    color: $text-muted;
+  }
+}
+
+// ─── Right Column ────────────────────────────────────────────────────────────
+.right-column {
+  width: 100%;
+
+  .ant-space-item {
+    width: 100%;
+  }
+}
+
+// ─── Ant Design Overrides ────────────────────────────────────────────────────
+
+// Remove Ant default body background interference
+.ant-upload-list {
+  display: none;
+}
+
+// ─── Animations ──────────────────────────────────────────────────────────────
+@keyframes blobFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(20px, -30px) scale(1.05); }
+  66%  { transform: translate(-15px, 20px) scale(0.97); }
+  100% { transform: translate(10px, -10px) scale(1.02); }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity:    0;
+    transform:  translateY(24px);
+  }
+  to {
+    opacity:    1;
+    transform:  translateY(0);
+  }
+}
+
+.home__hero     { animation: fadeSlideUp 0.6s ease both; }
+.hero__divider  { animation: fadeSlideUp 0.6s 0.1s ease both; }
+.home__form-row { animation: fadeSlideUp 0.6s 0.18s ease both; }
+
+// ─── Responsive ──────────────────────────────────────────────────────────────
+@media (max-width: 1024px) {
+  .home {
+    padding: 48px 20px 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 36px 16px 56px;
+  }
+
+  .glass-card {
+    padding: 22px 18px;
+
+    &--tall {
+      min-height: 280px;
+    }
+  }
+
+  .hero__title {
+    font-size: clamp(28px, 8vw, 40px) !important;
+  }
+
+  .premium-textarea {
+    min-height: 180px;
+
+    &--short {
+      min-height: 110px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 28px 12px 48px;
+  }
+
+  .glass-card {
+    padding: 18px 14px;
+  }
+
+  .cta-button.ant-btn {
+    height: 50px !important;
+    font-size: 14px !important;
+  }
+
+  .hero__title {
+    font-size: clamp(26px, 9vw, 36px) !important;
+  }
+
+  .section-icon {
+    width:     34px;
+    height:    34px;
+    min-width: 34px;
+    font-size: 15px;
+  }
+}
