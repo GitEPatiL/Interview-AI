@@ -268,22 +268,22 @@ const Interview = () => {
             <aside className="w-[320px] flex-shrink-0 flex flex-col gap-6 overflow-y-auto hide-scrollbar">
               
               {/* Score Card */}
-              <div className="bg-white/60 backdrop-blur-xl rounded-[2rem] p-8 shadow-xl border border-white text-center relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
-                <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-6"><TrophyFilled className="mr-1"/> Match Score</p>
+              <div className="bg-white/60 backdrop-blur-xl rounded-[1rem] p-1 shadow-xl border border-white text-center relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-auto h-auto bg-white/40 rounded-full blur-1xl -mr-5 -mt-5 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
+                <p className="text-s font-black text-gray-400 uppercase tracking-widest mb-6"><TrophyFilled className="mr-1"/> Match Score</p>
                 
-                <div className="relative inline-flex items-center justify-center">
+                <div className="relative inline-flex items-center justify-center mt-2">
                   <Progress
                     type="circle"
                     percent={report.matchScore}
-                    size={160}
+                    size={120}
                     strokeColor={scoreColor}
                     trailColor="#f3f4f6"
                     strokeWidth={8}
                     format={() => ''}
                   />
                   <div className="absolute flex flex-col items-center justify-center">
-                    <span className="text-5xl font-black tracking-tighter" style={{ color: scoreColor }}>{report.matchScore}</span>
+                    <span className="text-4xl font-black tracking-tighter" style={{ color: scoreColor }}>{report.matchScore}</span>
                   </div>
                 </div>
                 

@@ -87,7 +87,7 @@ const Login = () => {
               className="group w-full mt-4 bg-gray-900 hover:bg-gray-800 disabled:bg-gray-400 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg shadow-gray-900/20 active:scale-[0.98] flex items-center justify-center gap-2"
             >
               {loading ? "Signing in..." : (
-                <>Sign in <ArrowRightOutlined className="transition-transform group-hover:translate-x-1" /></>
+                <><span className="text-white">Sign in</span> <ArrowRightOutlined className="transition-transform group-hover:translate-x-1 text-white" /></>
               )}
             </button>
           </form>
