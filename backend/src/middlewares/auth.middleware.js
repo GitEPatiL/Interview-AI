@@ -9,7 +9,7 @@ async function authUser(req, res, next) {
       message: "Token not provided",
     });
   }
-
+  
   const isTokenBlackListed = await tokenBlacklistModel.findOne({
     token,
   });
