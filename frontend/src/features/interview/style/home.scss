@@ -4,27 +4,27 @@
 // ─── Design Tokens ──────────────────────────────────────────────────────────
 $font-family:       'Inter', system-ui, -apple-system, sans-serif;
 
-$bg-base:           #050508;
-$bg-surface:        #0c0c14;
-$bg-card:           rgba(255, 255, 255, 0.038);
-$bg-card-hover:     rgba(255, 255, 255, 0.055);
-$bg-input:          rgba(255, 255, 255, 0.04);
-$bg-input-focus:    rgba(255, 255, 255, 0.065);
+$bg-base:           #FFF9D2;
+$bg-surface:        #FFEBCC;
+$bg-card:           rgba(255, 235, 204, 0.7);
+$bg-card-hover:     rgba(255, 235, 204, 0.9);
+$bg-input:          #ffffff;
+$bg-input-focus:    #ffffff;
 
-$border-default:    rgba(255, 255, 255, 0.08);
-$border-focus:      rgba(139, 92, 246, 0.6);
-$border-glow:       rgba(139, 92, 246, 0.3);
+$border-default:    rgba(0, 0, 0, 0.08);
+$border-focus:      #8CC0EB;
+$border-glow:       rgba(140, 192, 235, 0.3);
 
-$purple-400:        #a78bfa;
-$purple-500:        #8b5cf6;
-$purple-600:        #7c3aed;
-$blue-400:          #60a5fa;
-$cyan-400:          #22d3ee;
-$green-400:         #4ade80;
+$purple-400:        #BFDDF0;
+$purple-500:        #8CC0EB;
+$purple-600:        #8CC0EB;
+$blue-400:          #8CC0EB;
+$cyan-400:          #BFDDF0;
+$green-400:         #8CC0EB;
 
-$text-primary:      #f1f0f5;
-$text-secondary:    rgba(241, 240, 245, 0.55);
-$text-muted:        rgba(241, 240, 245, 0.32);
+$text-primary:      #111827;
+$text-secondary:    rgba(17, 24, 39, 0.7);
+$text-muted:        rgba(17, 24, 39, 0.5);
 
 $radius-sm:         8px;
 $radius-md:         14px;
@@ -32,11 +32,11 @@ $radius-lg:         20px;
 $radius-xl:         28px;
 
 $shadow-card:       0 4px 32px rgba(0, 0, 0, 0.45),
-                    0 1px 0 rgba(255,255,255,0.05) inset;
-$shadow-glow:       0 0 40px rgba(139, 92, 246, 0.18);
-$shadow-cta:        0 8px 32px rgba(139, 92, 246, 0.45),
+                    0 1px 0 rgba(0, 0, 0,0.05) inset;
+$shadow-glow:       0 0 40px rgba(140, 192, 235, 0.18);
+$shadow-cta:        0 8px 32px rgba(140, 192, 235, 0.45),
                     0 2px 8px rgba(0,0,0,0.4);
-$shadow-cta-hover:  0 14px 48px rgba(139, 92, 246, 0.6),
+$shadow-cta-hover:  0 14px 48px rgba(140, 192, 235, 0.6),
                     0 4px 16px rgba(0,0,0,0.5);
 
 $transition-fast:   0.18s ease;
@@ -46,8 +46,8 @@ $transition-slow:   0.4s ease;
 // ─── Scrollbar ──────────────────────────────────────────────────────────────
 ::-webkit-scrollbar            { width: 6px; }
 ::-webkit-scrollbar-track      { background: transparent; }
-::-webkit-scrollbar-thumb      { background: rgba(139, 92, 246, 0.35); border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover{ background: rgba(139, 92, 246, 0.6); }
+::-webkit-scrollbar-thumb      { background: rgba(140, 192, 235, 0.35); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover{ background: rgba(140, 192, 235, 0.6); }
 
 // ─── Root ────────────────────────────────────────────────────────────────────
 .home {
@@ -77,7 +77,7 @@ $transition-slow:   0.4s ease;
   .bg-blob--1 {
     width:            600px;
     height:           600px;
-    background:       radial-gradient(circle, rgba(139,92,246,0.22) 0%, transparent 70%);
+    background:       radial-gradient(circle, rgba(140, 192, 235,0.22) 0%, transparent 70%);
     top:              -160px;
     left:             -160px;
     animation-delay:  0s;
@@ -86,7 +86,7 @@ $transition-slow:   0.4s ease;
   .bg-blob--2 {
     width:            500px;
     height:           500px;
-    background:       radial-gradient(circle, rgba(96,165,250,0.16) 0%, transparent 70%);
+    background:       radial-gradient(circle, rgba(255, 235, 204,0.16) 0%, transparent 70%);
     bottom:           -100px;
     right:            -100px;
     animation-delay:  -4s;
@@ -95,7 +95,7 @@ $transition-slow:   0.4s ease;
   .bg-blob--3 {
     width:            400px;
     height:           400px;
-    background:       radial-gradient(circle, rgba(34,211,238,0.10) 0%, transparent 70%);
+    background:       radial-gradient(circle, rgba(255, 249, 210,0.10) 0%, transparent 70%);
     top:              40%;
     left:             50%;
     transform:        translateX(-50%);
@@ -109,8 +109,8 @@ $transition-slow:   0.4s ease;
     pointer-events:   none;
     z-index:          0;
     background-image:
-      linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      linear-gradient(rgba(0, 0, 0,0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0,0.018) 1px, transparent 1px);
     background-size:  48px 48px;
     mask-image:       radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
   }
@@ -143,8 +143,8 @@ $transition-slow:   0.4s ease;
   display:          inline-flex !important;
   align-items:      center;
   gap:              6px;
-  background:       rgba(139, 92, 246, 0.12) !important;
-  border:           1px solid rgba(139, 92, 246, 0.3) !important;
+  background:       rgba(140, 192, 235, 0.12) !important;
+  border:           1px solid rgba(140, 192, 235, 0.3) !important;
   color:            $purple-400 !important;
   font-size:        12px !important;
   font-weight:      600 !important;
@@ -188,7 +188,7 @@ $transition-slow:   0.4s ease;
 }
 
 .hero__divider {
-  border-color:   rgba(255,255,255,0.06) !important;
+  border-color:   rgba(0, 0, 0,0.06) !important;
   margin:         40px 0 36px !important;
 }
 
@@ -209,12 +209,12 @@ $transition-slow:   0.4s ease;
     position:     absolute;
     inset:        0;
     border-radius: inherit;
-    background:   linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 60%);
+    background:   linear-gradient(135deg, rgba(0, 0, 0,0.04) 0%, transparent 60%);
     pointer-events: none;
   }
 
   &:hover {
-    border-color:  rgba(139, 92, 246, 0.22);
+    border-color:  rgba(140, 192, 235, 0.22);
     box-shadow:    $shadow-card, $shadow-glow;
     background:    $bg-card-hover;
   }
@@ -239,8 +239,8 @@ $transition-slow:   0.4s ease;
   height:           40px;
   min-width:        40px;
   border-radius:    $radius-sm;
-  background:       rgba(139, 92, 246, 0.14);
-  border:           1px solid rgba(139, 92, 246, 0.25);
+  background:       rgba(140, 192, 235, 0.14);
+  border:           1px solid rgba(140, 192, 235, 0.25);
   display:          flex;
   align-items:      center;
   justify-content:  center;
@@ -249,7 +249,7 @@ $transition-slow:   0.4s ease;
   transition:       background $transition-fast, transform $transition-fast;
 
   .glass-card:hover & {
-    background:   rgba(139, 92, 246, 0.22);
+    background:   rgba(140, 192, 235, 0.22);
     transform:    scale(1.05);
   }
 }
@@ -303,20 +303,20 @@ $transition-slow:   0.4s ease;
   }
 
   &:hover {
-    border-color:   rgba(255,255,255,0.14);
-    background:     rgba(255, 255, 255, 0.055);
+    border-color:   rgba(0, 0, 0,0.14);
+    background:     rgba(0, 0, 0, 0.055);
   }
 
   &:focus {
     border-color:   $border-focus;
     background:     $bg-input-focus;
-    box-shadow:     0 0 0 3px $border-glow, 0 4px 20px rgba(139, 92, 246, 0.1);
+    box-shadow:     0 0 0 3px $border-glow, 0 4px 20px rgba(140, 192, 235, 0.1);
   }
 
   // Custom scrollbar inside textarea
   &::-webkit-scrollbar        { width: 4px; }
   &::-webkit-scrollbar-track  { background: transparent; }
-  &::-webkit-scrollbar-thumb  { background: rgba(139, 92, 246, 0.3); border-radius: 99px; }
+  &::-webkit-scrollbar-thumb  { background: rgba(140, 192, 235, 0.3); border-radius: 99px; }
 
   &--short {
     min-height: 130px;
@@ -345,9 +345,9 @@ $transition-slow:   0.4s ease;
     padding:          0 !important;
 
     &:hover {
-      border-color:   rgba(139, 92, 246, 0.5) !important;
-      background:     rgba(139, 92, 246, 0.05) !important;
-      box-shadow:     0 0 24px rgba(139, 92, 246, 0.12);
+      border-color:   rgba(140, 192, 235, 0.5) !important;
+      background:     rgba(140, 192, 235, 0.05) !important;
+      box-shadow:     0 0 24px rgba(140, 192, 235, 0.12);
     }
 
     .ant-upload-drag-container {
@@ -356,7 +356,7 @@ $transition-slow:   0.4s ease;
 
     &.ant-upload-drag-hover {
       border-color:   $purple-500 !important;
-      background:     rgba(139, 92, 246, 0.08) !important;
+      background:     rgba(140, 192, 235, 0.08) !important;
     }
   }
 
@@ -434,7 +434,7 @@ $transition-slow:   0.4s ease;
     border:         none !important;
     border-radius:  $radius-md !important;
     background:     linear-gradient(135deg, $purple-600 0%, #6366f1 50%, $blue-400 100%) !important;
-    color:          #ffffff !important;
+    color: #111827 !important;
     box-shadow:     $shadow-cta !important;
     transition:     transform $transition-fast, box-shadow $transition-fast, filter $transition-fast !important;
     position:       relative;
@@ -444,7 +444,7 @@ $transition-slow:   0.4s ease;
       content:      '';
       position:     absolute;
       inset:        0;
-      background:   linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+      background:   linear-gradient(135deg, rgba(0, 0, 0,0.18) 0%, transparent 60%);
       opacity:      0;
       transition:   opacity $transition-fast;
     }

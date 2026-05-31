@@ -35,9 +35,13 @@ main{
         }
     }
 
-    a{
-        color:rgb(139, 41, 57);
+    a {
+        color: #8CC0EB;
         text-decoration: none;
+        font-weight: 600;
+        &:hover {
+            color: #BFDDF0;
+        }
     }
 }
 

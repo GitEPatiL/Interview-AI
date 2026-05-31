@@ -6,9 +6,14 @@
     border-radius: 1rem;
 
     &.primary-button{
-        background-color:rgb(139, 41, 57);
-        color :white;
-
+        background-color: #8CC0EB;
+        color: #111827;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        &:hover {
+            background-color: #BFDDF0;
+        }
     }
 
     &:active{

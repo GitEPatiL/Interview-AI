@@ -2,30 +2,30 @@
 
 // ── Tokens ───────────────────────────────────────────────────────────────────
 $font:           'Inter', system-ui, sans-serif;
-$bg:             #050508;
-$surface:        rgba(255,255,255,0.038);
-$surface-hover:  rgba(255,255,255,0.058);
-$border:         rgba(255,255,255,0.08);
-$border-active:  rgba(139,92,246,0.45);
-$purple:         #a78bfa;
-$blue:           #60a5fa;
-$green:          #4ade80;
+$bg:             #FFF9D2;
+$surface:        #FFEBCC;
+$surface-hover:  rgba(255, 235, 204, 0.8);
+$border:         rgba(0,0,0,0.08);
+$border-active:  #8CC0EB;
+$purple:         #BFDDF0;
+$blue:           #8CC0EB;
+$green:          #8CC0EB;
 $yellow:         #facc15;
 $red:            #f87171;
-$text-1:         #f1f0f5;
-$text-2:         rgba(241,240,245,0.55);
-$text-3:         rgba(241,240,245,0.30);
+$text-1:         #111827;
+$text-2:         rgba(17, 24, 39, 0.7);
+$text-3:         rgba(17, 24, 39, 0.5);
 $r-sm:           8px;
 $r-md:           12px;
 $r-lg:           18px;
-$shadow:         0 4px 24px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.04) inset;
+$shadow:         0 4px 24px rgba(0,0,0,0.05), 0 1px 0 rgba(0, 0, 0,0.4) inset;
 $t:              0.2s ease;
 
 // ── Scrollbar ────────────────────────────────────────────────────────────────
 ::-webkit-scrollbar            { width: 5px; }
 ::-webkit-scrollbar-track      { background: transparent; }
-::-webkit-scrollbar-thumb      { background: rgba(139,92,246,0.3); border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover{ background: rgba(139,92,246,0.55); }
+::-webkit-scrollbar-thumb      { background: rgba(140, 192, 235,0.3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover{ background: rgba(140, 192, 235,0.55); }
 
 // ── Root shell — full viewport, no page scroll ────────────────────────────────
 .ir {
@@ -50,12 +50,12 @@ $t:              0.2s ease;
 
     &--1 {
       width:  500px; height: 500px;
-      background: radial-gradient(circle, rgba(139,92,246,.18) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(140, 192, 235,.18) 0%, transparent 70%);
       top: -150px; left: -150px;
     }
     &--2 {
       width:  400px; height: 400px;
-      background: radial-gradient(circle, rgba(96,165,250,.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 235, 204,.12) 0%, transparent 70%);
       bottom: -100px; right: -100px;
       animation-delay: -8s;
     }
@@ -67,8 +67,8 @@ $t:              0.2s ease;
     z-index:    0;
     pointer-events: none;
     background-image:
-      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      linear-gradient(rgba(0, 0, 0,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0,0.015) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%);
   }
@@ -84,7 +84,7 @@ $t:              0.2s ease;
     justify-content: space-between;
     padding:        0 24px;
     border-bottom:  1px solid $border;
-    background:     rgba(5,5,8,0.85);
+    background:     rgba(255, 235, 204, 0.85);
     backdrop-filter: blur(20px);
     flex-shrink:    0;
 
@@ -103,14 +103,14 @@ $t:              0.2s ease;
       border-radius:   $r-sm;
       color:           $text-2;
       border:          1px solid $border;
-      background:      rgba(255,255,255,0.02);
+      background:      rgba(0, 0, 0,0.02);
       transition:      all $t;
       margin-right:    4px;
 
       &:hover {
         color:        $purple;
-        background:   rgba(139,92,246,0.08);
-        border-color: rgba(139,92,246,0.3);
+        background:   rgba(140, 192, 235,0.08);
+        border-color: rgba(140, 192, 235,0.3);
         transform:    translateY(-1px);
       }
     }
@@ -142,8 +142,8 @@ $t:              0.2s ease;
       font-family:    $font !important;
       height:         34px !important;
       padding:        0 14px !important;
-      color:          #ffffff !important;
-      box-shadow:     0 4px 12px rgba(139,92,246,0.2) !important;
+      color: #111827 !important;
+      box-shadow:     0 4px 12px rgba(140, 192, 235,0.2) !important;
       display:        flex !important;
       align-items:    center !important;
       gap:            6px !important;
@@ -152,7 +152,7 @@ $t:              0.2s ease;
       &:hover {
         background:   linear-gradient(135deg, #b794f4, #7c3aed) !important;
         transform:    translateY(-1px) !important;
-        box-shadow:   0 6px 16px rgba(139,92,246,0.35) !important;
+        box-shadow:   0 6px 16px rgba(140, 192, 235,0.35) !important;
       }
 
       &:active {
@@ -166,8 +166,8 @@ $t:              0.2s ease;
       font-weight:    600 !important;
       letter-spacing: 0.04em;
       color:          $purple !important;
-      border-color:   rgba(139,92,246,0.3) !important;
-      background:     rgba(139,92,246,0.10) !important;
+      border-color:   rgba(140, 192, 235,0.3) !important;
+      background:     rgba(140, 192, 235,0.10) !important;
       border-radius:  99px !important;
       padding:        3px 12px !important;
     }
@@ -192,7 +192,7 @@ $t:              0.2s ease;
     padding:      24px 12px;
     border-right: 1px solid $border;
     overflow-y:   auto;
-    background:   rgba(255,255,255,0.012);
+    background:   rgba(0, 0, 0,0.012);
     gap:          8px;
   }
 
@@ -233,8 +233,8 @@ $t:              0.2s ease;
     }
 
     &--active {
-      background:   rgba(139,92,246,0.12) !important;
-      border-color: rgba(139,92,246,0.35) !important;
+      background:   rgba(140, 192, 235,0.12) !important;
+      border-color: rgba(140, 192, 235,0.35) !important;
 
       .ir__nav-name  { color: $text-1; }
       .ir__nav-arrow { opacity: 1; transform: translateX(2px); color: $purple; }
@@ -252,8 +252,8 @@ $t:              0.2s ease;
     font-size:      15px;
     transition:     background $t;
 
-    &--blue   { background: rgba(96,165,250,0.14);  color: $blue;   border: 1px solid rgba(96,165,250,0.22);  }
-    &--purple { background: rgba(167,139,250,0.14); color: $purple; border: 1px solid rgba(167,139,250,0.22); }
+    &--blue   { background: rgba(255, 235, 204,0.14);  color: $blue;   border: 1px solid rgba(255, 235, 204,0.22);  }
+    &--purple { background: rgba(191, 221, 240,0.14); color: $purple; border: 1px solid rgba(191, 221, 240,0.22); }
     &--green  { background: rgba(74,222,128,0.14);  color: $green;  border: 1px solid rgba(74,222,128,0.22);  }
   }
 
@@ -325,8 +325,8 @@ $t:              0.2s ease;
     justify-content: center;
     font-size:      18px;
 
-    &--blue   { background: rgba(96,165,250,0.14);  color: $blue;   border: 1px solid rgba(96,165,250,0.25);  }
-    &--purple { background: rgba(167,139,250,0.14); color: $purple; border: 1px solid rgba(167,139,250,0.25); }
+    &--blue   { background: rgba(255, 235, 204,0.14);  color: $blue;   border: 1px solid rgba(255, 235, 204,0.25);  }
+    &--purple { background: rgba(191, 221, 240,0.14); color: $purple; border: 1px solid rgba(191, 221, 240,0.25); }
     &--green  { background: rgba(74,222,128,0.14);  color: $green;  border: 1px solid rgba(74,222,128,0.25);  }
   }
 
@@ -355,7 +355,7 @@ $t:              0.2s ease;
     overflow-y:     auto;
     overflow-x:     hidden;
     border-left:    1px solid $border;
-    background:     rgba(255,255,255,0.012);
+    background:     rgba(0, 0, 0,0.012);
     padding:        20px 16px;
     gap:            16px;
   }
@@ -369,7 +369,7 @@ $t:              0.2s ease;
     transition:   border-color $t, background $t;
 
     &:hover {
-      border-color: rgba(139,92,246,0.2);
+      border-color: rgba(140, 192, 235,0.2);
       background:   $surface-hover;
     }
   }
@@ -533,7 +533,7 @@ $t:              0.2s ease;
     width:          100%;
     height:         130px;
     border-radius:  $r-md;
-    background:     linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+    background:     linear-gradient(90deg, rgba(0, 0, 0,0.04) 25%, rgba(0, 0, 0,0.08) 50%, rgba(0, 0, 0,0.04) 75%);
     background-size: 200% 100%;
     animation:      shimmer 1.6s infinite;
     margin-bottom:  8px;
@@ -565,8 +565,8 @@ $t:              0.2s ease;
     height:         44px;
     min-width:      44px;
     border-radius:  $r-sm;
-    background:     rgba(139,92,246,0.12);
-    border:         1px solid rgba(139,92,246,0.25);
+    background:     rgba(140, 192, 235,0.12);
+    border:         1px solid rgba(140, 192, 235,0.25);
     display:        flex;
     flex-direction: column;
     align-items:    center;
@@ -597,7 +597,7 @@ $t:              0.2s ease;
     width:      2px;
     flex:       1;
     min-height: 20px;
-    background: linear-gradient(to bottom, rgba(139,92,246,0.3), rgba(139,92,246,0.05));
+    background: linear-gradient(to bottom, rgba(140, 192, 235,0.3), rgba(140, 192, 235,0.05));
     margin:     5px 0;
   }
 
@@ -640,7 +640,7 @@ $t:              0.2s ease;
     height:       5px;
     min-width:    5px;
     border-radius: 50%;
-    background:   rgba(139,92,246,0.5);
+    background:   rgba(140, 192, 235,0.5);
     margin-top:   7px;
   }
 
@@ -664,8 +664,8 @@ $t:              0.2s ease;
     &:last-child { border-bottom: none !important; }
 
     &.ant-collapse-item-active .q-label__idx {
-      background:   rgba(139,92,246,0.2);
-      border-color: rgba(139,92,246,0.45);
+      background:   rgba(140, 192, 235,0.2);
+      border-color: rgba(140, 192, 235,0.45);
       color:        $purple;
     }
   }
@@ -699,7 +699,7 @@ $t:              0.2s ease;
     height:           26px;
     min-width:        26px;
     border-radius:    $r-sm;
-    background:       rgba(255,255,255,0.06);
+    background:       rgba(0, 0, 0,0.06);
     border:           1px solid $border;
     font-family:      $font;
     font-size:        10px;
