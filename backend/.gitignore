@@ -70,3 +70,10 @@ coverage/
 *.pfx
 id_rsa
 id_rsa.pub
+
+# ============================================
+# Dev / Scratch files
+# ============================================
+demo.js
+temp.js
+scratch/
