@@ -38,22 +38,5 @@ export const useAuth = () => {
     setLoading(false);
   };
 
-   useEffect(()=>{
-        const getAndSetUser = async()=>{
-            setLoading(true);
-            try {
-                const data = await getMe();
-                setUser(data?.user || null);
-            } catch (err) {
-                console.log(err);
-                setUser(null);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        getAndSetUser()
-    },[])
-
   return { user, loading, handleLogin, handleLogout, handleRegister };
 };
